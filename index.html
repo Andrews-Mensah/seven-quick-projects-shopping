@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ShoppingCartApp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+
+    <script type= "text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <script type= "text/javascript" src="app.js"></script>
+
+
+
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="style.css ">
+
+</head>
+<body ng-controller="ShoppingCartController" style="background-color:aquamarine">
+
+    <h1>My Shopping Cart</h1>
+    <h3>The Number of items left are {{cart.length}}</h3>
+    <table>
+        <tr ng-repeat="item in cart">
+            <td>{{$index +1 }}</td>
+            <td>{{item}}</td>
+            <td>
+                <button class="btn-danger" ng-click="remove(item)">X</button>
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <input type="text" ng-model="newItem">
+        <button class="btn btn-success" ng-click="addItem(newItem)">Add</button>
+    
+</body>
+</html>
